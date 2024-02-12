@@ -1,7 +1,7 @@
 // Middleware function to check if req.host is equal to req.headers.referer
 const checkReferer = (req, res, next) => {
 	// Get the host from the request headers
-	const host = req.host;
+	const host = req.hostname;
 
 	// Get the referer from the request headers
 	const referer = req.headers?.referer;
