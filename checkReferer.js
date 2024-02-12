@@ -6,7 +6,11 @@ const checkReferer = (req, res, next) => {
 	// Get the referer from the request headers
 	const referer = req.headers?.referer;
 	let ref = '';
-	if (referer) ref = referer.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+	if (referer)
+		ref = referer
+			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')
+			.split('/')[0]
+			.split(':')[0];
 
 	// Check if referer exists and if it matches the host
 	if (ref == host) {

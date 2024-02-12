@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		try {
 			// Fetch the API route
 			//const apiUrl = window.location.origin + '/api';
+			//const response = await fetch('/api');
 			const response = await fetch('/test/api');
 
 			// Check if the response is successful

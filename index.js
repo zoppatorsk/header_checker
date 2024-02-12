@@ -9,7 +9,13 @@ const PORT = 9009;
 app.get('/api', checkReferer, (req, res) => {
 	let refUrl = req.headers.referer;
 	let url = '';
-	if (refUrl) url = refUrl.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
+	let url2 = '';
+	if (refUrl) {
+		url = refUrl
+			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '')
+			.split('/')[0]
+			.split(':')[0];
+	}
 	let hostname = req.hostname;
 	let obj = {
 		refUrl,
