@@ -11,7 +11,7 @@ const checkReferer = (req, res, next) => {
 			.split('/')[0]
 			.split(':')[0];
 
-	// Check if referer exists and if it matches the host
+	// Check if ref matches the host
 	if (ref == host) {
 		// If ref matches host, proceed to the next middleware
 		next();
