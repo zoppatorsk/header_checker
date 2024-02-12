@@ -1,11 +1,12 @@
 const express = require('express');
+const checkReferer = require('./checkReferer');
 const app = express();
 const path = require('path');
 app.use('/', express.static(path.join(__dirname, 'public')));
 const PORT = 9009;
 
 // GET route for API
-app.get('/api', (req, res) => {
+app.get('/api', checkReferer, (req, res) => {
 	let refUrl = req.headers.referer;
 	let url = '';
 	if (refUrl) url = refUrl.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('/')[0];
