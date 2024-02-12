@@ -1,4 +1,3 @@
-// Middleware function to check if req.host is equal to req.headers.referer
 const checkReferer = (req, res, next) => {
 	// Get the host from the request headers
 	const host = req.hostname;
@@ -14,7 +13,7 @@ const checkReferer = (req, res, next) => {
 
 	// Check if referer exists and if it matches the host
 	if (ref == host) {
-		// If referer matches host, proceed to the next middleware
+		// If ref matches host, proceed to the next middleware
 		next();
 	} else {
 		// If referer doesn't match host, return a 403 Forbidden response
