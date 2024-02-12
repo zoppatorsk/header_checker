@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	button.addEventListener('click', async function () {
 		try {
 			// Fetch the API route
-			const response = await fetch('/api');
+			const apiUrl = window.location.origin + '/api';
+			const response = await fetch(apiUrl);
 
 			// Check if the response is successful
 			if (!response.ok) {
